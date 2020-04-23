@@ -1,0 +1,40 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model IEnumerable<Site.Models.Comment>
+
+    <div class="container">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-9">
+                    <div style="background-color:#ffffff">
+                        <div class="comments-list">
+                            <div class="media">
+                                <div class="media-body">
+                                    <h4 class="media-heading">@item.Author</h4>
+                                    <hr>
+                                    @item.CommentText
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            }
+            <div class="col-md-9">
+                <div style="background-color:#ffffff">
+                    <div class="comments-list">
+                        <div class="media" style="text-align:center">
+                            <div class="media-body">
+                                <a asp-controller="Comments" asp-action="Create">Добавить комментарий</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        </div>
+

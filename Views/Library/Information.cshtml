@@ -1,0 +1,26 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model IEnumerable<Site.Models.Book>
+
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-lg-3">
+            <img class="img-thumbnail" src="@Url.Content(ViewBag.book.Link)" alt="" />
+        </div>
+
+
+        <div class="col-lg-9">
+            <h1>@ViewBag.book.Name</h1>
+            @ViewBag.book.Info
+            <hr>
+        <a style="margin-left:35%" class="cart-btn" asp-action="Order" asp-route-id="@ViewBag.book.BookId">Заказать</a>
+    </div>
+
+
+        </div>
+    </div>
+       

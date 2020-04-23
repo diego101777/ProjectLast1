@@ -1,0 +1,43 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model IEnumerable<Site.Models.Book>
+
+<div class="container-fluid">
+
+    <div class="row">
+
+        @foreach (var item in Model)
+        {
+
+            <div class="col-xl-4">
+                <div class="card h-100 w-50">
+                    <a href="#"><img class="card-img-top" src="@Url.Content(item.Link)" alt=""></a>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a asp-action="Information" asp-route-id="@item.BookId">@item.Name</a>
+                        </h4>
+                        <h5>@item.Author</h5>
+                    </div>
+                </div>
+            </div>
+
+        }
+
+
+
+        <div class="col-md-9">
+            <div style="background-color:#ffffff">
+                <div class="comments-list">
+                    <div class="media" style="text-align:center">
+                        <div class="media-body">
+                            <a asp-controller="Library" asp-action="Create">Добавить книгу</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+        </div>

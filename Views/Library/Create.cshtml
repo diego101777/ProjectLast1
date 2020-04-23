@@ -1,0 +1,29 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model Site.Models.Book
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-md-3">
+            <form asp-action="create" asp-controller="library">
+                <input type="hidden" class="form-control" asp-for="isHave" value="true">
+                <input type="hidden" class="form-control" asp-for="DateIn" value="@DateTime.Now">
+                <div class="form-group">
+                    <input type="text" class="form-control" asp-for="Name" placeholder="Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" asp-for="Author" placeholder="Author" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" asp-for="Info" placeholder="Information" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" asp-for="Link" placeholder="Link" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
